@@ -1,0 +1,8 @@
+mysqldatabasemanager utf8_unicode_ci
+
+CREATE TABLE country(
+   	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    countryName VARCHAR(20),
+    shortDesc TEXT,
+    longDesc LONGTEXT
+    );
