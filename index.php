@@ -11,11 +11,39 @@
     </head>
     <body>
         
-        <div class="container">
-            
-        </div>
-        
+        <div class="container-fluid">
+            <div class="card-header"><b>MySQL Table Manager</b></div>
 
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8"></div>
+                <div class="col-md-2">
+                    <input type="button" class="btn btn-success" id="addNew" value="Add New" style="margin-top: 6px;"/>
+                </div>
+            </div>
+            
+
+            <br/><br/>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Country Name</td>
+                                <td>Option</td>
+                            </tr>
+                        </thead>
+
+                        <tbody><!-- ajax + sql --></tbody>
+
+                    </table>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+
+        </div>
         
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     	<script type="text/javascript" src="js/bootstrap.js"></script>
