@@ -14,17 +14,18 @@
         <div class="container-fluid">
             <div class="card-header"><b>MySQL Table Manager</b></div>
 
-            <div class="row">
+            <div class="row"  style="margin-top: 6px;">
                 <div class="col-md-2"></div>
-                <div class="col-md-8"></div>
+                <div class="col-md-8">
+                  <button  class="btn btn-success" data-toggle="modal" data-target="#insertModal">Insert</button>
+                </div>
                 <div class="col-md-2">
-                    <input type="button" class="btn btn-success" id="addNew" value="Add New" style="margin-top: 6px;"/>
                 </div>
             </div>
             
 
-            <br/><br/>
-            <div class="row">
+            
+            <div class="row" style="margin-top: 6px;">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <table class="table table-hover table-bordered">
@@ -44,11 +45,83 @@
             </div>
 
         </div>
+
+
+        <!-- Insert Modal -->
+        <div  class="modal fade " id="insertModal"  role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Insert</h4>
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" id="insertForm">
+                            <input type="text" class="form-control" placeholder="CountryName..." id="countryName"><br/>
+                            <textarea class="form-control" id="shortDesc" placeholder="Short Country Description"></textarea><br/>
+                            <textarea class="form-control" id="longDesc" placeholder="Short Country Description"></textarea><br/>
+                            <button id="insertBtn" data-dismiss="modal" class="btn btn-primary btn-block">Insert</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Modal -->
+        <div  class="modal fade" id="viewModal"  role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">
+                            <div  id="countryView"></div>
+                        <h4>
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>Short Description</h3>
+                        <div id="shortDescView"></div>
+                        <br/>
+                        <h3>Long Description</h3>
+                        <div id="longDescView"></div>
+                    </div>
+                    <div class="modal-footer">
+                            <button id="manageBtn"  class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Modal -->
+        <div  class="modal fade" id="updateModal"  role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Update</h4>
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" placeholder="CountryName..." id="countryName"><br/>
+                        <textarea class="form-control" id="shortDesc" placeholder="Short Country Description"></textarea><br/>
+                        <textarea class="form-control" id="longDesc" placeholder="Short Country Description"></textarea><br/>
+                    </div>
+                    <div class="modal-footer">
+                            <button id="manageBtn"  class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     	<script type="text/javascript" src="js/bootstrap.js"></script>
     	<script type="text/javascript" src="js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="js/myjs.js"></script>
+        
     </body>
 </html>
