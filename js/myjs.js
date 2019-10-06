@@ -40,24 +40,36 @@ $(document).ready(function(){
         });
     });
 
-    $("body").delegate("#editBtn","click",function(event){
-        
+    $("body").delegate("#selectUpdate","click",function(event){
+        event.preventDefault();
+        var id = $(this).attr('countryId');
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            dataType: "json",
+            data:{
+                selectUpdate: 1,
+                id: id
+            },
+            success: function(response){
+                $("#countryUpdateTitle").html(response.countryName);
+                $("#countryNameUpdate").val(response.countryName);
+                $("#shortDescUpdate").val(response.shortDesc);
+                $("#longDescUpdate").val(response.longDesc);
+            }
+        });
     });
 
-    $("body").delegate("#viewBtn","click",function(event){
-
+    $("body").delegate("#selectView","click",function(event){
+        event.preventDefault();
         var id = $(this).attr('countryId');
-        var countryName = $(this).attr('countryName');
-        var shortDesc = $(this).attr('shortDesc');
-        var longDesc = $(this).attr('longDesc');
-
         
         $.ajax({
             url: "action.php",
             method: "POST",
             dataType: "json",
             data:{
-                viewBtn: 1,
+                selectView: 1,
                 id: id
             },
             success: function(response){
@@ -66,7 +78,27 @@ $(document).ready(function(){
                 $("#longDescView").html(response.longDesc);
             }
         });
-
-        
     });
+
+
+    $("body").delegate("#selectDelete","click",function(event){
+        event.preventDefault();
+        var id = $(this).attr('countryId');
+        if(confirm("Are you sure?")){
+            $.ajax({
+                url: "action.php",
+                method: "POST",
+                dataType: "text",
+                data:{
+                    selectDelete: 1,
+                    id: id
+                },
+                success: function(response){
+                    alert(response);
+                    getExistingData();
+                }
+            });
+        }
+    });
+
 });

@@ -31,9 +31,9 @@
                     <table class="table table-hover table-bordered">
                         <thead>
                             <tr>
-                                <td>ID</td>
-                                <td>Country Name</td>
-                                <td>Option</td>
+                                <th>ID</th>
+                                <th>Country Name</th>
+                                <th>Option</th>
                             </tr>
                         </thead>
 
@@ -77,14 +77,14 @@
                     <div class="modal-header">
                         <h4 class="modal-title">
                             <div  id="countryView"></div>
-                        <h4>
+                        </h4>
                         <button class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <h3>Short Description</h3>
+                        <b>Short Description</b>
                         <div id="shortDescView"></div>
                         <br/>
-                        <h3>Long Description</h3>
+                        <b>Long Description</b>
                         <div id="longDescView"></div>
                     </div>
                     <div class="modal-footer">
@@ -99,17 +99,20 @@
             <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Update</h4>
+                        <h4 class="modal-title"><div id="countryUpdateTitle"></div></h4>
                         <button class="close" data-dismiss="modal">&times;</button>
                         
                     </div>
                     <div class="modal-body">
-                        <input type="text" class="form-control" placeholder="CountryName..." id="countryName"><br/>
-                        <textarea class="form-control" id="shortDesc" placeholder="Short Country Description"></textarea><br/>
-                        <textarea class="form-control" id="longDesc" placeholder="Short Country Description"></textarea><br/>
+                        <form>
+                            <input type="text" class="form-control" value="" placeholder="CountryName..." id="countryNameUpdate"><br/>
+                            <textarea class="form-control" id="shortDescUpdate" value="" placeholder="Short Country Description"></textarea><br/>
+                            <textarea class="form-control" id="longDescUpdate" value="" placeholder="Short Country Description"></textarea><br/>
+                            <button id="updateBtn" data-dismiss="modal" class="btn btn-primary btn-block">Update</button>
+                        </form>
                     </div>
                     <div class="modal-footer">
-                            <button id="manageBtn"  class="btn btn-primary">Save</button>
+                        <button class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
