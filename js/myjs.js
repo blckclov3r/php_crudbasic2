@@ -43,6 +43,7 @@ $(document).ready(function(){
     $("body").delegate("#selectUpdate","click",function(event){
         event.preventDefault();
         var id = $(this).attr('countryId');
+        $("#countryId").val(id);
         $.ajax({
             url: "action.php",
             method: "POST",
@@ -52,6 +53,7 @@ $(document).ready(function(){
                 id: id
             },
             success: function(response){
+             
                 $("#countryUpdateTitle").html(response.countryName);
                 $("#countryNameUpdate").val(response.countryName);
                 $("#shortDescUpdate").val(response.shortDesc);
@@ -99,6 +101,30 @@ $(document).ready(function(){
                 }
             });
         }
+    });
+
+    $("#updateBtn").click(function(event){
+        event.preventDefault();
+        var id = $("#countryId").val();
+        var countryName = $("#countryNameUpdate").val();
+        var shortDesc = $("#shortDescUpdate").val();
+        var longDesc = $("#longDescUpdate").val();
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            dataType: "text",
+            data: {
+                updateBtn: 1,
+                id: id,
+                countryName: countryName,
+                shortDesc: shortDesc,
+                longDesc: longDesc
+            },
+            success: function(response){
+                alert(response);
+                getExistingData();
+            }
+        })
     });
 
 });

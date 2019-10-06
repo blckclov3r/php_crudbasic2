@@ -104,7 +104,8 @@
                         
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form method="POST">
+                            <input type='hidden' value="0" id="countryId" />
                             <input type="text" class="form-control" value="" placeholder="CountryName..." id="countryNameUpdate"><br/>
                             <textarea class="form-control" id="shortDescUpdate" value="" placeholder="Short Country Description"></textarea><br/>
                             <textarea class="form-control" id="longDescUpdate" value="" placeholder="Short Country Description"></textarea><br/>

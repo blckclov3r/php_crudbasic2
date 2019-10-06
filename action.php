@@ -89,4 +89,19 @@
             exit("Some error occur");
         }
     }
+    
+    if(isset($_POST['updateBtn'])){
+        $id = $_POST['id'];
+        $countryName = $_POST['countryName'];
+        $shortDesc = $_POST['shortDesc'];
+        $longDesc = $_POST['longDesc'];
+        $sql = "UPDATE country SET countryName ='$countryName', shortDesc='$shortDesc', longDesc='$longDesc' WHERE id='$id'";
+        $query = mysqli_query($db->getConn(),$sql);
+        $db->getClose();
+        if($query){
+            exit('success');
+        }else{
+            exit('some error occured');
+        }
+    }
 ?>
